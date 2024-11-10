@@ -3,7 +3,7 @@ const DATA = [
         email: "admin@admin.com",
         password: "abc123",
         fullname: "Admin Account",
-        type: "Savings Peso",
+        type: "Savings",
         number: "47290539480",
         balance: 1000,
         isAdmin: true, 
@@ -13,9 +13,9 @@ const DATA = [
         email: "mayank@gmail.com",
         password: "abc123",
         fullname: "Mayank Prajapat",
-        type: "Savings Peso",
+        type: "Savings",
         number: "47290539481",
-        balance: 1029300.43,
+        balance: 1029300,
         isAdmin: true, 
         transactions: []
     },
@@ -23,20 +23,10 @@ const DATA = [
         email: "kanaki@gmail.com",
         password: "abc123",
         fullname: "Vishwanath Kanaki",
-        type: "Savings Peso",
+        type: "Savings",
         number: "47290539482",
-        balance: 392830.22,
+        balance: 392830,
         isAdmin: false, 
-        budget: [
-            {
-                title: "Tuition fee",
-                amount: 12000
-            },
-            {
-                title: "Food take out during the pandemic",
-                amount: 4000
-            }
-        ], 
         transactions: [
             {
                 title: "Fund transfer", 
@@ -52,37 +42,29 @@ const DATA = [
             }
         ]
     },
+
     {
         email: "user24@gmail.com",
         password: "abc123",
         fullname: "Vineet Sharma",
-        type: "Savings Peso",
+        type: "Savings",
         number: "47290539483",
-        balance: 102938.34,
-        isAdmin: false, 
-        transactions: []
-    },
-    {
-        email: "user34@gmail.com",
-        password: "abc123",
-        fullname: "Tushar Singh",
-        type: "Checking Peso",
-        number: "47290539484",
-        balance: 837495.38, 
+        balance: 102938,
         isAdmin: false, 
         transactions: []
     },
 
     {
-        email: "derek@gmail.com",
+        email: "user34@gmail.com",
         password: "abc123",
-        fullname: "Derek hispasi",
-        type: "Checking Peso",
-        number: "47290539485",
-        balance: 574839.58, 
+        fullname: "Tushar Singh",
+        type: "Checking",
+        number: "47290539484",
+        balance: 837495, 
         isAdmin: false, 
         transactions: []
     },
+
     {
         email: "client@client.com",
         password: "abc123",

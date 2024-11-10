@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Notif } from "./Notif";
 import { formatNumber, findAccount, transact, trim, capitalize } from "./Utils";
+import { deposit } from "../banking_web3";
 
 export const TransactPage = (props) => {
     const users = JSON.parse(localStorage.getItem('users'));
@@ -26,12 +27,12 @@ export const TransactPage = (props) => {
         }
     }
 
-    const onDeposit = (e) => {
+    const onDeposit = async (e) => {
         const amount = formatNumber(trim(e.target.value));
         setDepositAmount(amount);
     }
 
-    const processTransfer = (e) => {
+    const processTransfer = async (e) => {          /* */
         e.preventDefault();
         const amount = trim(e.target.elements.amount.value);
         const accountNumber = e.target.elements.account.value;
@@ -39,6 +40,7 @@ export const TransactPage = (props) => {
         if(amount > 0 && accountNumber !== "0") {
             for(const user of accounts) {
                 if(user.number === accountNumber) {
+                    await deposit(amount);  /* new added here */
                     transact(user.number, amount, props.type, props.setUsers);
                     setSelectedAccount(findAccount(user.number));
                     setAccounts(JSON.parse(localStorage.getItem('users')));

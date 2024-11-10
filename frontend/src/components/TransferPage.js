@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Notif } from "./Notif";
 import { formatNumber, getDateToday } from "./Utils";
+import { transfer } from "../banking_web3";
 
 export const TransferPage = (props) => {
     const {isClient, client, setClient} = props;
@@ -63,7 +64,7 @@ export const TransferPage = (props) => {
         
     })
 
-    const transferFund = event => {
+    const transferFund = async (event) => {
         event.preventDefault();
         const amount = parseFloat(event.target.elements.amount.value.replace(/,/g, ''));
         if(amount <= 0) return false;
@@ -97,6 +98,7 @@ export const TransferPage = (props) => {
 
             // add to receiver 
             if(senderSuccess) {
+                await transfer(receiver.number, amount);  /* new addition */
                 users.forEach(user => {
                     if(user.number === receiver.number) {
                         user.balance += amount;

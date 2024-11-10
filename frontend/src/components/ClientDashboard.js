@@ -3,7 +3,6 @@ import { Sidebar } from './Sidebar';
 import { MainClientContent } from './MainClientContent';
 import { findAccount } from './Utils';
 import { TransferPage } from './TransferPage';
-import { BudgetApp } from './BudgetApp';
 
 export const ClientDashboard = (props) => {
     const { logout, client, setClient } = props;
@@ -23,15 +22,6 @@ export const ClientDashboard = (props) => {
         <main>
           <Sidebar changePage={changePageHandler} page={page} user={client} logoutHandler={props.logout} />
           <MainClientContent user={client} />
-        </main>
-      )
-    }
-  
-    if(page === 'budget') {
-      return (
-        <main>
-          <Sidebar changePage={changePageHandler} page={page} user={client} logoutHandler={props.logout} />
-          <BudgetApp client={client} />
         </main>
       )
     }

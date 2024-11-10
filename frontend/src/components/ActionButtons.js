@@ -10,8 +10,7 @@ export const ActionButtons = (props) => {
           text="Edit" 
           index={index} 
           actionType="edit"
-          editingUser={editingUser} 
-          // actionType='edit' 
+          editingUser={editingUser}  
           setEditingUser={setEditingUser} setEditModal={setEditModal} />
 
         <ActionButton 

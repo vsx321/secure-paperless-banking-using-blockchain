@@ -3,7 +3,6 @@ import { ActionButtons } from "./ActionButtons";
 import { formatNumber } from "./Utils";
 
 export const Account = (props) => {
-    
     const {type, accountNumber, balance, fullname, editingUser, setEditingUser, setDeleteUser, index, isAdmin, setEditModal} = props;
     
     const action = isAdmin ? <ActionButtons index={index} 

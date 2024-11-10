@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from './Logo';
 import { Notif } from './Notif';
+
 
 export const LoginPage = (props) => {
     const [username, setUsername] = useState('');
@@ -18,6 +21,12 @@ export const LoginPage = (props) => {
     const onChangePassword = (event) => {
       setPassword(event.target.value);
     }
+
+    const navigate = useNavigate();
+
+    const handleSignUpClick = () => {
+      navigate('/signup'); // Redirects to the signup page
+    };
   
     return (
       <div id="login-page">
@@ -31,6 +40,7 @@ export const LoginPage = (props) => {
             <input id="password" autoComplete="off" onChange={onChangePassword} value={password} type="password" />
             <button type="submit" className="btn">Login</button>
           </form>
+          <button type="submit" className="btn" onClick={handleSignUpClick}>Sign up</button>
         </div>
       </div>
     )
